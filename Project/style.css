@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+    margin-top: 30px;
+}
+h1 {
+    text-align: center;
+    margin: auto;
+    color: white;
+}
+h2 {
+    color: rgb(147, 50, 211);
+    text-align: center;
+}
+p {
+    margin: auto;
+    color: white;
+}
