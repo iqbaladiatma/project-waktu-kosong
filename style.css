@@ -24,10 +24,23 @@ body {
   z-index: 100;
 }
 .logo {
+  position: relative;
   font-size: 25px;
   color: #e2edff;
   text-decoration: none;
   font-weight: 600;
+}
+
+.logo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #081b29;
+  animation: showRight 1s ease forwards;
+  animation-delay: .4s;
 }
 
 .navbar a {
@@ -44,6 +57,9 @@ body {
 }
 .home {
   height: 100vh;
+  background: url('img/home.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   padding: 0 10%;
@@ -52,24 +68,73 @@ body {
   max-width: 600px;
 }
 .home-content h1 {
+  position: relative;
   font-size: 56px;
   font-weight: 700;
   line-height: 1.2;
 }
+.home-content h1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #081b29;
+  animation: showRight 1s ease forwards;
+  animation-delay: 1s;
+}
 .home h3 {
+  position: relative;
   font-size: 32px;
   font-weight: 700;
   color: #00abf0;
 }
+.home-content h3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #081b29;
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.3s;
+}
 .home p {
+  position: relative;
   font-size: 16px;
   margin: 20px 0 40px;
 }
+.home-content p::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #081b29;
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.6s;
+}
 .home-content .btn-box {
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: 345px;
   height: 50px;
+}
+.home-content .btn-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #081b29;
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.3s;
+  z-index: 2;
 }
 
 .btn-box a {
@@ -95,12 +160,13 @@ body {
 .btn-box a:hover {
     color: #00abf0;
 }
+
 .btn-box a:nth-child(2) {
   background: transparent;
   color: #00abf0;
 }
 
-.btn-box a:nth-child(2)::hover {
+.btn-box a:nth-child(2):hover {
   color: #081b29;
 }
 
@@ -130,7 +196,20 @@ body {
     display: flex;
     justify-content: space-between;
 }
+.home-sci::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #081b29;
+  animation: showRight 1s ease forwards;
+  animation-delay: 2.5s;
+  z-index: 2;
+}
 .home-sci a {
+  position: relative;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -142,4 +221,70 @@ body {
   font-size: 20px;
   color: #00abf0;
   text-decoration: none;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.home-sci a:hover {
+  color: #081b29;
+}
+
+.home-sci a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #00abf0;
+  z-index: -1;
+  transition: .5s;
+}
+
+.home-sci a:hover::before {
+  width: 100%;
+}
+
+.home-imgHover {
+    position: absolute;
+    top: 0;
+    right: 50px;
+    width: 600px;
+    height: 100%;
+    background: transparent;
+    transition: 3s;
+    animation: manipActiveHover .1s forwards;
+    animation-delay: 4s;
+    pointer-events: none;
+}
+
+.home-imgHover:hover {
+  background: #081b29;
+  opacity: .8;
+}
+
+.home-imgHover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120%;
+  height: 100%;
+  background: #081b29;
+  animation: showRight 1s ease forwards;
+  animation-delay: 3s;
+  z-index: 100;
+}
+/* KEYFRAME ANIMATION */
+@keyframes showRight {
+    100% {
+      width: 0;
+    }
+}
+
+@keyframes manipActiveHover {
+  100% {
+    pointer-events: auto;
+  }
 }
